@@ -18,7 +18,7 @@
             }
             document.write("<br>");
         }
-        
+
         document.write("<br>");
 
         for (var a = length; a > 0; a--) {
@@ -30,7 +30,7 @@
         document.write("<br>");
         var t=1;
         for(i=length;i>=1;i--){
-            for(j=0;j>i/2;j--)document.write("&nbsp");
+            for(j=length-i;j>0;j--)document.write("&nbsp");
             for(var k = 1;k<=t;k++)document.write("*");
             t+=2;
             document.write("<br>");
