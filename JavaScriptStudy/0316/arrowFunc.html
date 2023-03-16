@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age=19;
+        eval((age<20)? ()=>alert('안녕'):()=>alert('안녕하시옵니까!'));
+
+        let arr=[1,2,3,4,5];
+        const p3 =arr.map(e=> Math.pow(e,2));
+        console.log(p3);
+
+        let group={
+            name:'studygroup',
+            member:['준현','아름','종호','현명','재승'],
+            showMember(){
+                console.log(this);
+                this.member.forEach(a=> document.write(a+" "+this.name+"<br>"))
+            }
+        }
+        group.showMember();
+    </script>
+</body>
+</html>

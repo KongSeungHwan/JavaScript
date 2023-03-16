@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+</head>
+<body>
+    <strong id="message"></strong>
+    <div class="container">
+        <button id="btn1">숨기기1</button>
+        <button id="btn1">숨기기2</button>
+    </div>
+    <a href="http://www.naver.com">네이버</a>
+    <form>
+        <label for="chkbox">체크박스</label>
+        <input type="checkbox" id="chkbox">
+    </form>
+    <script>
+         document.querySelector('#btn1').addEventListener('click',function(){
+            document.setAttribute('style','display:hidden');
+         });
+    </script>
+    
+</body>
+</html>
