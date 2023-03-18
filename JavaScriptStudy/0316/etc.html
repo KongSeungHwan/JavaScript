@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>etc</title>
     <style>
         .color{color:brown;}
         .color2{color:blue;}
@@ -20,15 +20,27 @@
             <li id="four">대전</li>
         </ul>
     </div>
-    <script>
-        let ele = document.getElementByClassName('color');
-        console.dir(ele);
-        console.log(ele.__proto__);
-        console.log(ele.__proto__.__proto__);
-        console.log(ele.__proto__.__proto__.__proto__);
-        Array.from(ele2).forEach(e=> e.className='color2');
+<script>
+    const ele=document.getElementById('one');
+    console.dir(ele);
+    console.log(ele.__proto__);
+    console.log(ele.__proto__.__proto__);
+    console.log(ele.__proto__.__proto__.__proto__);
 
-        
-    </script>
+    const ele2 = document.getElementsByClassName('color');
+    console.log(ele2);
+    console.log([...ele2]);
+    //for(let i=0;i<ele2.length;){
+    //    ele2[i].className='color2';
+    //    console.log(ele2[i],ele2.length);
+    //}
+    let elec = Array.from(ele2);
+    console.log(elec,elec.length);
+    for(let i=0;i<elec.length;i++){
+        elec[i].className='color2';
+        console.log(elec[i],elec.length);
+    }
+
+</script>
 </body>
 </html>

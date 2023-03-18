@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,13 +17,27 @@
         </script>
     </ul>
     <script>
-        document.getElementsByTagName("li").item(0).innerHTML="tagName";/* item메소드 파라미터는 줄 인덱스 */
+        //HTML 태그이름을 통한 선택
+        document.getElementsByTagName("li").item(0)
+            .innerHTML="tagName";
+        //아이디를 통한 선택
         document.getElementById("findId").innerHTML="id";
-        document.getElementsByClassName("findClass").item(0).innerHTML="class";
-        document.getElementsByName("findName").item(0).innerHTML="name";
-        document.querySelector(".write").innerHTML="write";
-        console.log(document.querySeletor("li"));
-        console.log(document.querySeletorAll("li"));
+        //클래스를 통한 선택
+        document.getElementsByClassName("findClass").item(0)
+            .innerHTML="class";
+        //이름을 통한 선택
+        document.getElementsByName("findName").item(0)
+            .innerHTML="name";
+        //CSS 선택자를 통한 선택
+        document.querySelector(".write").innerHTML="query selector";
+        console.log(document.title);
+        console.log(document.getElementsByTagName("li"));
+        document.getElementById("findId").className="findClass";
+        console.log(document.querySelector('li'));
+        console.log(document.querySelectorAll('li'));
+        
     </script>
 </body>
 </html>
+
+

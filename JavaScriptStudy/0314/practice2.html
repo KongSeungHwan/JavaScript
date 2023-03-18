@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <h4>사각형</h4>
+    <script>
+        let repeat=5;
+        for(let row=0;row<repeat;row++){
+            for(let col=0;col<repeat;col++){
+                document.write('*');
+            }
+            document.write("<br>");
+        }
+    </script>
+    <h4>삼각형</h4>
+    *<br>
+    **<br>
+    ***<br>
+    ****<br>
+    *****<br>
+    <br>
+    <script>
+        let line=5;
+        let starcount=1;
+        for(let row=0;row<line;row++){
+
+            for(let col=0;col<starcount;col++){
+                document.write('*');
+            }
+
+            document.write("<br>");
+            starcount++;
+        }        
+    </script>
+    <br>
+    *****<br>****<br>***<br>**<br>*<br>
+    <script>
+        line=5;
+        starcount=5;
+        for(let row=0;row<line;row++){
+            for(let col=0;col<starcount;col++){
+                document.write('*');
+            }
+            document.write("<br>");
+            starcount--;
+        }        
+    </script>
+    &nbsp;&nbsp;*<br>
+    &nbsp;***<br>
+    *****<br>
+    <script>
+        line=3;
+        spacecount=2;
+        starcount=1;
+        for(let row=0;row<line;row++){
+            for(let space=0;space<spacecount;space++){
+                document.write('&nbsp;');
+            }
+            for(let star=0;star<starcount;star++){
+                document.write('*');
+            }
+            document.write("<br>");
+            spacecount--;
+            starcount+=2;
+        }
+    </script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

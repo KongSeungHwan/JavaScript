@@ -1,51 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BOM</title>
 </head>
 <body>
-    <script>
-        /* window 객체
-            alert prompt confirm
-        */
-       function openFunc(){
-            window.open('https://www.naver.com','_self');/* _self _blank */
-        }
-       /* 
-        location 객체
-       */
-      document.write("href:"+location.href,"<br>");
-      document.write("href:"+location.hostname,"<br>");
-      document.write("href:"+location.host,"<br>");
-      document.write("href:"+location.protocol,"<br>");
-      /* 
-      hostname은 한글로 표기? user 나올듯
-        host는 127.0.0.1
-      host는 127.0.0.1 포트번호(5500)까지 나옴
-      protocol은 http  통신규약(+https도 있긴 함) 
-      */
-     /* history 객체
-        back()<<뒤로가기
-        forward()<<앞으로 가기
-        브라우저 gui 기능을 코드로 나타내면 이렇다
-
-        go(0) <<새로고침 효과
-        go(2) 두페이지 앞으로가기 코드
-        go(-2) 두 페이지 뒤로가기 코드
-     */
-    /* 
-        navigator 객체 브라우저 정보 운영체제 정보
+    <button onclick="openFunc()">naver</button>
+<script>
+    /* window 객체
+    alert() prompt() confirm() open() 
     */
-   document.write("appCodeName")
-   document.write("appName")
-   document.write("appVersion")
-   document.write("language")
-   document.write("product")
-   document.write("platform")
-   /* 기존 코드 복붙 필수 */
-    </script>
+    function openFunc(){
+        window.open('https://www.naver.com','_blank');
+    }
+    /*history 객체
+    back() forward() go(숫자)
+    */
+    /*location 객체
+    */
+    document.write("href:"+location.href,"<br>");
+    document.write("hostname:"+location.hostname,"<br>");
+    document.write("host:"+location.host,"<br>");
+    document.write("protocol:"+location.protocol,"<br>");
+    document.write("search:"+location.search,"<br>");
+    //location.reload();
+
+    /*navigator 객체 브라우저 정보 운영체제의 정보
+    */
+    document.write("appCodeName:"+navigator.appCodeName,"<br>");
+    document.write("appName:"+navigator.appName,"<br>");
+    document.write("appVersion:"+navigator.appVersion,"<br>");
+    document.write("language:"+navigator.language,"<br>");
+    document.write("product:"+navigator.product,"<br>");
+    document.write("platform:"+navigator.platform,"<br>");
+    document.write("userAgent:"+navigator.userAgent,"<br>");
+    /*screen 객체 사용자의 모니터 정보
+    */
+    document.write("width:"+screen.width,"<br>");
+    document.write("height:"+screen.height,"<br>");
+    document.write("availWidth:"+screen.availWidth,"<br>");
+    document.write("availHeight:"+screen.availHeight,"<br>");
+    document.write("colorDepth:"+screen.colorDepth,"<br>");
+</script>
 </body>
 </html>

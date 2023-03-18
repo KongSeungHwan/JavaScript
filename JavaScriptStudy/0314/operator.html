@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,117 +7,121 @@
     <title>Operator</title>
 </head>
 <body>
-    <script>
-        let x=10, y=4;
-        console.log(x,"?",y,"=");
-        console.log("+",x+y);
-        console.log("-",x-y);
-        console.log("x",x*y);
-        console.log("/",x/y); 
-        /* 소수점까지 나옴 2.5 자바와는 다름 */
-        console.log("나머지",x%y);
-        console.log("거듭제곱",x**y);
-        console.log("대입 연산자");
-        x=10,y=10;
-        console.log(x-=4);/* 대입 연산자는 왼쪽 피연산자를 리턴하므로 x값이 리턴된다. */
-        console.log(x+=3);
-        console.log(x*=2);
-        console.log(x/=2);
-        console.log(x%=2);
-        console.log(x**=4);
+<script>
+    console.log("산술연산자");
+    let x=10,y=4;
+    console.log(x,"?",y,"=");
+    console.log("+",x+y);
+    console.log("-",x-y);
+    console.log("x",x*y);
+    console.log("/",x/y);
+    console.log("나머지",x%y);
+    console.log("거듭제곱",x**y);
 
-        console.log("증감 연산자");
-        x=10, y=10;
-        console.log(--x*3);
-        console.log(x);
-        console.log(y--*3);
-        console.log(y);
-        x=10;
-        y=x--/* 10 */ + 5 + --x/* 8 */;/* 10+5+8 >> 23 */
-        console.log(y,x);/* x == 8   y == 23 */
-        /* 23 8 */
+    console.log("대입연산자");
+    x=10,y=10;
+    console.log(x-=4);
+    console.log(x+=3);
+    console.log(x*=2);
+    console.log(x/=2);
+    console.log(x%=2);
+    console.log(x**=4);
 
-        console.log("비교연산자");
-        x=5,y=10;
-        let a='apple', b='back';
-        console.log("x",x,"y",y,"a",a,"b",b);
-        console.log("x>y",x>y);
-        console.log("x<y",x<y);
-        console.log("x>=y",x>=y);
-        console.log("x<=y",x<=y);
-        console.log("a>b",a>b);
-        console.log("a<b",a<b);
-        console.log("a>=b",a>=b);
-        console.log("a<=b",a<=b);
-        console.log("x>a",x>a);
-        console.log("x<=a",x<=a);/* 문자열은 ASCII Code로 비교함. */
-        x=5,y='5';
-        let z=5;
-        console.log("x",x,"y",y,"z",z);
-        console.log("x==y",x==y);
-        console.log("x===y",x===y);
-        console.log("x==z",x==z);
-        console.log("x===z",x===z);
-        
-        let t=true, f=false;
+    console.log("증감연산자");
+    x=10,y=10;
+    console.log(--x*3);
+    console.log(x);
+    console.log(y--*3);
+    console.log(y);
+    x=10;
+    y=x-- + 5 + --x;
+    console.log(y,x);
 
-        console.log("논리 연산자");
-        console.log("t&&t",t&&t);
-        console.log("f&&t",f&&t);
-        console.log("f||t",f||t);
-        console.log("f||f",f||f);
-        console.log("!t",!t,"!f",!f);
-        console.log("사용형태",x>10 && y>10 || x<10);
+    console.log("비교연산자");
+    x=5,y=10;
+    let a='apple',b='back';
+    console.log("x",x,"y",y,"a",a,"b",b);
+    console.log("x>y",x>y);
+    console.log("x<y",x<y);
+    console.log("x>=y",x>=y);
+    console.log("x<=y",x<=y);
+    console.log("a>b",a>b);
+    console.log("a<b",a<b);
+    console.log("a>=b",a>=b);
+    console.log("a<=b",a<=b);
+    console.log("x>a",x>a);
+    console.log("x<=a",x<=a);
+    x=5,y='5';
+    let z=5;
+    console.log("x",x,"y",y,"z",z);
+    console.log("x==y",x==y);
+    console.log("x===y",x===y);
+    console.log("x==z",x==z);
+    console.log("x===z",x===z);
 
-        console.log("비트 연산자");
-        x=15, y=8, z =15;
-        let k=8;
-        console.log("x",x,"y",y,"z",z,"k");
-        console.log("x<<1",x<<1);/* 24 */
-        console.log("y>>1",y>>1);/* 4  >>은 비트연산 하되 음수범위도 연산*/
-        console.log("y>>>1",y>>>1);/* 비트연산 하되 음수범위 연산x 버림처리 */
-        console.log("x&y",x&y);
-        console.log("x|y",x|y);
-        console.log("x^y",x^y);
-        console.log("~z",~z);
-        console.log("~k",~k);
+    console.log("논리연산자");
+    let t=true,f=false;
+    console.log("t&&t",t&&t);
+    console.log("f&&t",f&&t);//단축평가
+    console.log("t||f",t||f);//단축평가
+    console.log("f||f",f||f);
+    console.log("!t",!t,"!f",!f);
+    console.log("사용형태",x>10 && y>10 || x<10);
 
-        console.log("삼항 연산자");
-        x=3, y=6;
-        let result=(x>y)?x:y;
-        console.log("두 수",x,",",y,"중 큰 수는",result);/* 6 */
+    console.log("비트연산자");
+    x=15,y=8,z=15;
+    let k=8;
+    console.log("x",x,"y",y,"z",z,"k",k);
+    console.log("x<<1",x<<1);
+    console.log("y>>1",y>>1);
+    console.log("y>>>1",y>>>1);
+    console.log("x&y",x&y);
+    console.log("x|y",x|y);
+    console.log("x^y",x^y);
+    console.log("~z",~z);
+    console.log("~k",~k);
 
-        console.log("type check");
-        let str = "문자열";
-        str = new String("문자열");
-        console.log("문자열",typeof str);
-        console.log("10",typeof 10);
-        console.log("NaN",typeof NaN);
-        console.log("false",typeof false);
-        console.log("undefined",typeof undefined);
-        console.log("날짜",typeof new Date());
-        console.log("null",typeof null);/* null 또한 object 즉 객체이며 빈 객체이다. */
-        let nullCheck = null;
-        console.log(typeof nullCheck === null);
-        console.log(typeof (typeof nullCheck));/* typeof 의 리턴 값은 해당 파라미터의 자료형 */
-        console.log(nullCheck === null);
-        console.log(str);
-        console.log(str instanceof Object);
-        console.log(str instanceof String);
-        console.log(str instanceof Array);
-        console.log(str instanceof Number);
-        console.log(str instanceof Boolean);
-        let today = new Date();
-        console.log(today);
-    </script>
-    <h3>void 연산자</h3>
-    <a href="javascript:void(0)">링크</a>
-    <br>
-    <a href="javascript:void(document.body.style.background='yellow')">
-        문서 배경색 변환
-    </a>
-    <script>
-        let input;
-    </script>
+    console.log("삼항연산자");
+    x=3,y=6;
+    let result=(x>y)?x:y;
+    console.log("두 수",x,",",y,"중 큰수는",result);
+
+    console.log("type check");
+    let str = "문자열";
+    console.log("문자열",typeof str);
+    console.log("10",typeof 10);
+    console.log("NaN",typeof NaN);
+    console.log("false",typeof false);
+    console.log("undefined",typeof undefined);
+    console.log("날자",typeof new Date());
+    console.log("null",typeof null);
+    let nullCheck = null;
+    console.log(typeof nullCheck === null);
+    console.log(typeof (typeof nullCheck));
+    console.log(nullCheck === null);
+
+    console.log(str);
+    str=new String("문자열");
+    console.log(str);
+    console.log(str instanceof Object);
+    console.log(str instanceof String);
+    console.log(str instanceof Array);
+    console.log(str instanceof Number);
+    console.log(str instanceof Boolean);
+    let today = new Date();
+    console.log(today);
+</script>
+<h3>void 연산자</h3>
+<a href="javascript:void(0)">링크</a>
+<br>
+<a href="javascript:void(document.body.style.background='yellow')">
+    문서 배경색 변환
+</a>
+<script>
+    let input=window.prompt("아무거나 치세요.");
+    document.write(input);
+    input=window.confirm("둘중 하나");
+    document.write(input);
+</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +7,57 @@
     <title>연습</title>
 </head>
 <body>
-    <h1>숫자의 합</h1>
-    <script>
-        let fnum = 100;
-        let sum= 0;
-        while(fnum>0)sum+=(fnum--);/* while문 활용 100까지의 합*/
-        document.write("합"+sum);
-        document.write("<br>");
-        fnum=100;
-        sum=0;
-        for(;fnum>0;fnum--)sum+=fnum;/* for문 활용 100까지 합 */
-        document.write("합"+sum);
-        document.write("<br>");
-        fnum=100;
-        sum=0;
-        for(;fnum>0;fnum--)((fnum%2==0)||(fnum%3==0))?sum+=fnum:"";
-        document.write("합"+sum);/* 2,3배수들의 합 */
-        /* 시간 복잡도는 그대로나 공간 복잡도는 최대한 줄이고 코드 수도 최소화 */
-        fnum=0;
-        sum=0;
-        /* for(;fnum<=100;fnum++)(sum>=125)? break : sum+=fnum; */
-    </script>
+<h1>숫자의 합</h1>
+<script>
+    //1~100까지의 합
+    let fnum=100;
+    let sum=0;
+//    let i=1;
+//    while(i<=fnum){
+//        sum+=i;
+//        i++;
+//    }
+    for(let i=1;i<=fnum;i++){
+        sum+=i;
+    }
+    document.write("총합"+sum+"<br>");
+    //1~100 홀수의 총합
+    let oddsum=0;
+    let i=1;
+    while(i<=fnum){
+        oddsum+=i;
+        i+=2;
+    }
+//    for(let i=1;i<=fnum;i+=2){
+//        oddsum+=i;
+//    }
+    document.write("홀수의 총합:"+oddsum+"<br>");
+    //1~100 짝수의 총합
+    let evensum=0;
+    for(let i=2;i<=fnum;i+=2){
+        evensum+=i;
+    }
+    document.write("짝수의 총합:"+evensum+"<br>");
+    //1~100 2의 배수와 3의 배수들만의 총합
+    let somesum=0;
+    for(let i=1;i<=fnum;i++){
+        if(i%2==0||i%3==0){
+            somesum+=i;
+        }
+    }
+    document.write("2의배수 3의배수들의 총합:"+somesum+"<br>");
+    //합계가 125를 넘는 순간의 숫자와 총합
+    let limitNum=0;
+    let limitSum=0;
+    for(let i=1;i<=fnum;i++){
+        limitSum+=i;
+        if(limitSum>=125){
+            limitNum=i;
+            break;
+        }
+    }
+    document.write("마지막 숫자"+limitNum);
+    document.write("합계:"+limitSum);
+</script>
 </body>
 </html>

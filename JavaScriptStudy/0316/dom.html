@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,50 +20,64 @@
             <li id="four">대전</li>
         </ul>
     </div>
-    <script>
-        const ele = document.querySelector('#two');
-        console.log(ele);
-        ele.parentNode.className='color2';
-        const ele2= document.querySelector('ul');
-        console.log(ele2.firstChild,ele2.lastChild);
-        console.log(ele2.firstElementChild,ele2.lastElementChild);
-        ele2.firstElementChild.className='color2';
-        ele2.lastElementChild.className='color';
-        console.log(ele2.firstElementChild.nextSibling,ele2.lastElementChild.previousSibling);
-        console.log(ele2.firstElementChild.nextElementSibling,ele2.lastElementChild.previousElementSibling);/* 요소 내부의 영역(이전,이후)에 접근하는 필드 */
-        ele2.firstElementChild.nextElementSibling='color2';
-        ele2.lastElementChild.previousElementSibling='color2';
-        /* ele3=document.querySelector('#one'); */
-        const ele3=document.getElementById('one');
-        console.log(ele3);
-        console.dir(ele3);
-        console.log(ele3.nodeName,ele3.nodeType,ele3.nodeValue);
-        const textnode = ele3.firstChild;
-        console.dir(textnode);
-        console.log(textnode.nodeName,textnode.nodeType,textnode.nodeValue);
-        console.log(ele.textContent);
-        console.log(ele3.textContent);
-        ele3.textContent='서울';
-        ele3.innerHTML += '<strong class="color">,한국</strong>';/* 문서 html코드로 취급하여 추가하는 방식 */
-       /*  ele3.innerText += '<strong class="color">,한국</strong>'; *//* 문자열 자체를 텍스트로 취급하여 추가하는 방식 */
+<script>
+    const ele = document.querySelector('#two');
+    console.log(ele,ele.parentNode);
+    ele.parentNode.className='color2';
+    const ele2 = document.querySelector('ul');
+    console.log(ele2);
+    console.log(ele2.firstChild,ele2.lastChild);
+    console.log(ele2.firstElementChild,ele2.lastElementChild);
+    ele2.firstElementChild.className='color2';
+    ele2.lastElementChild.className='color';
+    console.log(ele2.firstElementChild.nextSibling,
+        ele2.lastElementChild.previousSibling);
+    console.log(ele2.firstElementChild.nextElementSibling,
+        ele2.lastElementChild.previousElementSibling);
+    ele2.firstElementChild.nextElementSibling.className='color2';
+    ele2.lastElementChild.previousElementSibling.className='color2';
+    
+    //ele3=document.querySelector('#one');
+    const ele3=document.getElementById('one');
+    console.log(ele3);
+    console.dir(ele3);
+    console.log(ele3.nodeName,ele3.nodeType,ele3.nodeValue);
+    const textnode = ele3.firstChild;
+    console.dir(textnode);
+    console.log(textnode.nodeName,textnode.nodeType
+        ,textnode.nodeValue);
+    textnode.nodeValue='인천';
+    console.dir(textnode);
+    console.log(textnode.nodeName,textnode.nodeType
+        ,textnode.nodeValue);
+    console.log(ele.textContent);
+    console.log(ele3.textContent);
+    ele3.textContent='서울';
 
-        const newEle = document.createElement('li');
-        const newText = document.createTextNode('북경');
+    ele3.innerHTML += '<strong class="color">,한국</strong>';
+    //ele3.innerText += '<strong class="color">,한국</strong>'; 
 
-        newEle.appendChild(newText);
+    const newEle = document.createElement('li');//요소를 생성
+    const newText = document.createTextNode('북경');//텍스트 노드 생성
+    //텍스트 노드를 해당 요소의 자식으로 DOM트리 구조 상에 추가
+    newEle.appendChild(newText);
+    //해당 요소를 메인 DOM 트리 구조에 추가
+    document.querySelector('ul').appendChild(newEle);
 
-        document.querySelector('ul').appendChild(newEle);
-        
-        const removeEle=document.getElementById('one');
-        document.querySelector('ul').insertBefore(newEle,removeEle);
-    </script>
-    <script>
-        const input = document.querySelector('input[type="text"]');
-        if(!input.hasAttribute('placeholder')){
-            input.setAttribute('placeholder','hello!');
-        }
-        console.log(input.getAttribute('placeholder'));
-        input.removeAttribute('placeholder');   //안에 있던 문구가 사라지게 함
-    </script>
+    const removeEle=document.getElementById('one');
+    document.querySelector('ul').insertBefore(newEle,removeEle);
+    newText.insertData(2,'중국');
+    document.querySelector('ul').removeChild(removeEle);
+</script>
+    <input type="text">
+<script>
+    const input=document.querySelector('input[type=text]');
+    console.log(input);
+    if(!input.hasAttribute('placeholder')){
+        input.setAttribute('placeholder','hello!');
+    }
+    console.log(input.getAttribute('placeholder'));
+    input.removeAttribute('placeholder');
+</script>
 </body>
 </html>

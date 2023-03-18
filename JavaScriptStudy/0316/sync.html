@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비동기 처리</title>
+</head>
+<body>
+    동기 : 하나의 요청 완료한 뒤 다음 요청을 실행
+    비동기 : 하나의 요청 완료 전에 다음 요청을 실행
+    <script>
+        function buy_w(item,price,quantity){
+            console.log(`${item}상품을 ${quantity}개 선택하여 계산대로 이동`);
+            setTimeout(function(){
+                console.log("계산 진행중");
+                var total=price*quantity;
+                return total;
+            },1000);
+        }
+        function buy_r(item,price,quantity,callback){
+            console.log(`${item}상품을 ${quantity}개 선택하여 계산대로 이동`);
+            setTimeout(function(){
+                console.log("계산 진행중");
+                var total=price*quantity;
+                callback(total);
+            },1000);
+        }
+        function pay(tot){
+            console.log(tot+'원 지불');
+        }
+        // var tot=buy_w('사과',1000,5);
+        // pay(tot);
+        buy_r('사과',1000,5,pay);
+
+    </script>
+</body>
+</html>
+
+
