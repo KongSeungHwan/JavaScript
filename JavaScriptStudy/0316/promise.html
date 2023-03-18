@@ -33,9 +33,15 @@
                 setTimeout(function(){
                     if(Math.floor(Math.random()*2)===1)re('학교에 도착');
                     else rej('중간에 사고 발생');
-                },1000)
-            })
+                },1000);
+            });
         }
+
+        function cure(){
+            console.log('병원으로 가자');
+        }
+        goToSchool();
+        
     </script>
 </body>
 </html>

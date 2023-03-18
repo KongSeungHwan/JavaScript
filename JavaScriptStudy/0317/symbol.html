@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        자료형
+        원시
+        number,boolean,String,null,undefined
+        /
+        객체
+
+        ==================================
+        충돌 위험이 없는 유일한 객체의 프로퍼티 키 값을 만들기 위해서
+        당연한 소린게 동일 필드가 2개일리는 없으니..(이름: ~!@#~# 이름:!$!$!@$ &lt&lt 이 경우는 없으니)
+    </pre>
+    <script>
+        const s1 =Symbol();
+        const s2 =Symbol();
+        console.log(s1,s2,s1===s2);
+        const as1=Symbol('a');
+        const as2=Symbol('a');
+        console.log(as1,as2,as1===as2);
+        const s3=s1;
+        console.log(s1===s3);
+        const fs1=Symbol.for('uni');
+        const fs2=Symbol.for('uni');
+        console.log(fs1,fs2,fs1===fs2);
+
+    </script> 
+</body>
+</html>
