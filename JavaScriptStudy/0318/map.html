@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+
+    let map=new Map();
+    map.set('1','str').set(1,'num').set(true,'bool').forEach((a,b,c)=>document.write(a+" "+b+"<br>"));
+    /* console.log(map);
+    console.log(map.get(1).get('1').get(true));
+    console.log(map.size()); */
+    let map2=new Map([
+        ['사과',100],
+        ['감귤',200],
+        ['양파',300]
+    ]);
+    console.log(map2);
+    let obj={
+        사과:100,
+        감귤:200,
+        양파:300
+    }
+    let map3=new Map(Object.entries(obj));
+    console.log(map3,map3.get('사과'));
+    let obj2=Object.fromEntries(map3);
+    console.log(obj2);
+    map2.forEach((a,b,c)=>document.write(a+" "+b+"<br>"));
+    Object.entries(obj).forEach(e=>e.forEach(s=>document.write(s+"<br>")));
+    </script>
+</body>
+</html>
